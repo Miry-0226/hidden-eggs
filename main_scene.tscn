@@ -1,0 +1,377 @@
+[gd_scene load_steps=27 format=3 uid="uid://cwih6cf7djr3r"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_mskoj"]
+[ext_resource type="PackedScene" uid="uid://g4vboi1boif" path="res://scenes/end_scene.tscn" id="2_4i51i"]
+[ext_resource type="PackedScene" uid="uid://bjnd3dkeihipv" path="res://scenes/cross_scene.tscn" id="2_4laau"]
+[ext_resource type="Texture2D" uid="uid://dpp77hfgyq5bp" path="res://assets/background_image.png" id="4_vimjn"]
+[ext_resource type="Script" path="res://scripts/Eggs.gd" id="5_5cc1t"]
+[ext_resource type="Script" path="res://scripts/IndividualEgg.gd" id="6_5cvla"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_grrx0"]
+radius = 6.69615
+height = 16.1244
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2m7sq"]
+radius = 12.6462
+height = 33.9568
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dsmnt"]
+radius = 13.9794
+height = 33.2222
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8k0nw"]
+radius = 14.8155
+height = 39.4751
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44ipb"]
+radius = 33.8892
+height = 72.7028
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xjmvk"]
+radius = 10.1954
+height = 24.6772
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gobm"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cswr0"]
+radius = 13.0
+height = 34.9807
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82n8s"]
+radius = 17.4291
+height = 41.1806
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ray3"]
+radius = 12.9975
+height = 35.6375
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qfrxm"]
+radius = 17.4632
+height = 43.1374
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdwj8"]
+radius = 11.4004
+height = 29.1899
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4wco5"]
+radius = 11.4004
+height = 29.1899
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry8f0"]
+radius = 19.9999
+height = 45.6016
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lejnj"]
+radius = 19.9999
+height = 45.6016
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6f4nm"]
+radius = 4.47202
+height = 12.5081
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wh5h8"]
+radius = 4.47202
+height = 12.5081
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtilg"]
+radius = 11.0142
+height = 28.6063
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hlm5l"]
+radius = 20.3875
+height = 55.0953
+
+[sub_resource type="LabelSettings" id="LabelSettings_037p4"]
+font_size = 60
+font_color = Color(0, 0, 0, 0.282353)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_mskoj")
+end_scene = ExtResource("2_4i51i")
+cross_scene = ExtResource("2_4laau")
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+light_mask = 0
+visibility_layer = 0
+offset_left = 17.0
+offset_top = -2.0
+offset_right = 1169.0
+offset_bottom = 638.0
+mouse_filter = 2
+color = Color(0.262745, 0.262745, 0.262745, 1)
+metadata/_edit_lock_ = true
+
+[node name="MainImage" type="Sprite2D" parent="."]
+position = Vector2(591, 281)
+scale = Vector2(1.32637, 1.32637)
+texture = ExtResource("4_vimjn")
+metadata/_edit_lock_ = true
+
+[node name="CrossSpawn" type="Node2D" parent="."]
+
+[node name="Eggs" type="Node2D" parent="."]
+script = ExtResource("5_5cc1t")
+
+[node name="egg1" type="Area2D" parent="Eggs"]
+position = Vector2(137, 217)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg1"]
+rotation = -1.0472
+shape = SubResource("CapsuleShape2D_grrx0")
+metadata/_edit_lock_ = true
+
+[node name="egg2" type="Area2D" parent="Eggs"]
+position = Vector2(132, 306)
+rotation = -0.624828
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg2"]
+shape = SubResource("CapsuleShape2D_2m7sq")
+metadata/_edit_lock_ = true
+
+[node name="egg3" type="Area2D" parent="Eggs"]
+position = Vector2(253, 156)
+rotation = -0.937242
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg3"]
+shape = SubResource("CapsuleShape2D_dsmnt")
+metadata/_edit_lock_ = true
+
+[node name="egg4" type="Area2D" parent="Eggs"]
+position = Vector2(284, 331)
+rotation = 1.00007
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg4"]
+shape = SubResource("CapsuleShape2D_8k0nw")
+metadata/_edit_lock_ = true
+
+[node name="egg5" type="Area2D" parent="Eggs"]
+position = Vector2(141, 424)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg5"]
+rotation = -1.00007
+shape = SubResource("CapsuleShape2D_44ipb")
+metadata/_edit_lock_ = true
+
+[node name="egg6" type="Area2D" parent="Eggs"]
+position = Vector2(256, 431)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg6"]
+rotation = -0.174533
+shape = SubResource("CapsuleShape2D_xjmvk")
+metadata/_edit_lock_ = true
+
+[node name="egg7" type="Area2D" parent="Eggs"]
+position = Vector2(346, 466)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg7"]
+rotation = -0.872665
+shape = SubResource("CapsuleShape2D_1gobm")
+metadata/_edit_lock_ = true
+
+[node name="egg8" type="Area2D" parent="Eggs"]
+position = Vector2(576, 425)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg8"]
+rotation = 1.22173
+shape = SubResource("CapsuleShape2D_1gobm")
+metadata/_edit_lock_ = true
+
+[node name="egg9" type="Area2D" parent="Eggs"]
+position = Vector2(466, 496)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg9"]
+rotation = -1.0472
+shape = SubResource("CapsuleShape2D_cswr0")
+metadata/_edit_lock_ = true
+
+[node name="egg10" type="Area2D" parent="Eggs"]
+position = Vector2(656, 288)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg10"]
+rotation = 3.49066
+shape = SubResource("CapsuleShape2D_82n8s")
+metadata/_edit_lock_ = true
+
+[node name="egg11" type="Area2D" parent="Eggs"]
+position = Vector2(743, 255)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg11"]
+rotation = 1.19555
+shape = SubResource("CapsuleShape2D_0ray3")
+metadata/_edit_lock_ = true
+
+[node name="egg12" type="Area2D" parent="Eggs"]
+position = Vector2(669, 85)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg12"]
+rotation = -0.401426
+shape = SubResource("CapsuleShape2D_qfrxm")
+metadata/_edit_lock_ = true
+
+[node name="egg13" type="Area2D" parent="Eggs"]
+position = Vector2(785, 102)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg13"]
+rotation = 0.698132
+shape = SubResource("CapsuleShape2D_sdwj8")
+metadata/_edit_lock_ = true
+
+[node name="egg14" type="Area2D" parent="Eggs"]
+position = Vector2(865, 419)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg14"]
+rotation = -3.01942
+shape = SubResource("CapsuleShape2D_4wco5")
+metadata/_edit_lock_ = true
+
+[node name="egg15" type="Area2D" parent="Eggs"]
+position = Vector2(923, 427)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg15"]
+rotation = -0.750492
+shape = SubResource("CapsuleShape2D_ry8f0")
+metadata/_edit_lock_ = true
+
+[node name="egg16" type="Area2D" parent="Eggs"]
+position = Vector2(1063, 406)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg16"]
+rotation = 0.645772
+shape = SubResource("CapsuleShape2D_lejnj")
+metadata/_edit_lock_ = true
+
+[node name="egg17" type="Area2D" parent="Eggs"]
+position = Vector2(1095, 335)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg17"]
+rotation = 0.296706
+shape = SubResource("CapsuleShape2D_6f4nm")
+metadata/_edit_lock_ = true
+
+[node name="egg18" type="Area2D" parent="Eggs"]
+position = Vector2(1027, 269)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg18"]
+rotation = -1.09956
+shape = SubResource("CapsuleShape2D_wh5h8")
+metadata/_edit_lock_ = true
+
+[node name="egg19" type="Area2D" parent="Eggs"]
+position = Vector2(982, 237)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg19"]
+rotation = -0.165806
+shape = SubResource("CapsuleShape2D_vtilg")
+metadata/_edit_lock_ = true
+
+[node name="egg20" type="Area2D" parent="Eggs"]
+position = Vector2(936, 80)
+script = ExtResource("6_5cvla")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs/egg20"]
+rotation = 0.706858
+shape = SubResource("CapsuleShape2D_hlm5l")
+metadata/_edit_lock_ = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 570.0
+offset_top = 66.0
+offset_right = 670.0
+offset_bottom = 149.0
+text = "0"
+label_settings = SubResource("LabelSettings_037p4")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="EndMenu" parent="." instance=ExtResource("2_4i51i")]
+top_level = true
+offset_right = -1152.0
+offset_bottom = -648.0
+
+[connection signal="game_end" from="." to="Eggs" method="_on_game_end"]
+[connection signal="game_end" from="." to="EndMenu" method="_on_game_end"]
+[connection signal="egg_found" from="Eggs" to="." method="_on_eggs_egg_found"]
+[connection signal="im_found" from="Eggs/egg1" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg1" to="Eggs/egg1" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg2" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg2" to="Eggs/egg2" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg3" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg3" to="Eggs/egg3" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg4" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg4" to="Eggs/egg4" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg5" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg5" to="Eggs/egg5" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg6" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg6" to="Eggs/egg6" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg7" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg7" to="Eggs/egg7" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg8" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg8" to="Eggs/egg8" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg9" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg9" to="Eggs/egg9" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg10" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg10" to="Eggs/egg10" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg11" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg11" to="Eggs/egg11" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg12" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg12" to="Eggs/egg12" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg13" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg13" to="Eggs/egg13" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg14" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg14" to="Eggs/egg14" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg15" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg15" to="Eggs/egg15" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg16" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg16" to="Eggs/egg16" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg17" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg17" to="Eggs/egg17" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg18" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg18" to="Eggs/egg18" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg19" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg19" to="Eggs/egg19" method="_on_input_event"]
+[connection signal="im_found" from="Eggs/egg20" to="Eggs" method="_on_egg_im_found"]
+[connection signal="input_event" from="Eggs/egg20" to="Eggs/egg20" method="_on_input_event"]
+[connection signal="restart" from="EndMenu" to="." method="_on_restart"]

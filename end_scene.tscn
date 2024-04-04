@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://g4vboi1boif"]
+
+[ext_resource type="Script" path="res://scripts/Button.gd" id="1_0kpv0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ihnt"]
+font_size = 40
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[node name="EndMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kpv0")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 645.0
+color = Color(0, 0, 0, 0.286275)
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 336.0
+offset_right = 679.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 30
+text = "Restart"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 207.0
+offset_right = 771.0
+offset_bottom = 320.0
+text = "Congratulations! 
+You found them all!"
+label_settings = SubResource("LabelSettings_4ihnt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
